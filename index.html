@@ -1,11 +1,203 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My First GitHub Pages Site</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OSIM — Organization Profile</title>
+  <meta name="description" content="Official profile website for OSIM — student organization." />
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --accent:#2563eb; --muted:#6b7280; --glass:rgba(255,255,255,0.6);
+      --radius:12px; --maxw:1100px;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#0f172a;}
+    .container{max-width:var(--maxw);margin:36px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none}
+
+    .hero{margin-top:24px;background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:0 6px 18px rgba(12,20,40,0.06);display:grid;grid-template-columns:1fr 320px;gap:24px}
+    .hero h1{margin:0;font-size:28px}
+    .hero p{color:var(--muted);line-height:1.6}
+    .stat{display:flex;gap:18px;margin-top:18px}
+    .stat .item{background:var(--glass);padding:12px;border-radius:10px;min-width:92px;text-align:center}
+    .stat .num{font-weight:700;font-size:18px}
+
+    .about, .members, .director, .contact{margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,40,0.04)}
+
+    .members-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:12px}
+    .member{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:10px;background:#e6eefc;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+    .member h4{margin:0;font-size:15px}
+    .member p{margin:0;color:var(--muted);font-size:13px}
+
+    .director .director-box{display:flex;gap:16px;align-items:center}
+    .director .info h3{margin:0}
+
+    .contact form{display:grid;gap:10px}
+    .field{display:block}
+    input[type="text"],input[type="email"],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px}
+    button{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:700}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      nav{flex-wrap:wrap}
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This website is hosted for FREE using GitHub Pages 🚀</p>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">OS</div>
+        <div>
+          <div style="font-weight:800;letter-spacing:0.2px">OSIM — Organization</div>
+          <div style="font-size:13px;color:var(--muted)">School Student Organization Profile</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#members">Members</a>
+        <a href="#director">Director</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero card" aria-label="intro">
+      <div>
+        <h1>Welcome to OSIM — Our Student Organization</h1>
+        <p>OSIM (Organisasi Siswa Intra Madrasah) is a student-led organization dedicated to fostering leadership, creativity, and community service. We organize events, run projects, and offer members opportunities to develop skills that last a lifetime.</p>
+
+        <div class="stat">
+          <div class="item"><div class="num">12</div><div style="font-size:12px;color:var(--muted)">Committees</div></div>
+          <div class="item"><div class="num">120</div><div style="font-size:12px;color:var(--muted)">Active Members</div></div>
+          <div class="item"><div class="num">8</div><div style="font-size:12px;color:var(--muted)">Events / Year</div></div>
+        </div>
+      </div>
+
+      <aside>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card" style="text-align:center">
+            <h3 style="margin-bottom:6px">Quick Links</h3>
+            <div style="color:var(--muted);font-size:14px">Membership · Events · News · Gallery</div>
+          </div>
+
+          <div class="card" style="text-align:left">
+            <h4 style="margin:0 0 6px 0">Upcoming Event</h4>
+            <strong>OSIM Annual Charity Bazaar</strong>
+            <p style="margin:8px 0 0 0;color:var(--muted);font-size:13px">Join us on <strong>September 5, 2025</strong> to raise funds for community initiatives.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="about">
+      <div class="card">
+        <h2>About OSIM</h2>
+        <p style="color:var(--muted)">Founded to give students a voice and channel for positive action, OSIM works closely with school staff to plan extracurricular activities, charitable projects, and student welfare programs. We value collaboration, responsibility, and inclusivity.</p>
+
+        <h3 style="margin-top:12px">Our Mission</h3>
+        <ul style="color:var(--muted)">
+          <li>Empower student leadership and responsibility.</li>
+          <li>Create platforms for student expression and skills development.</li>
+          <li>Serve the school and local community through organized activities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="members" class="members">
+      <div class="card">
+        <h2>Key Members</h2>
+        <p style="color:var(--muted);margin-top:4px">Meet a few of our active members and committee leads.</p>
+
+        <div class="members-grid">
+          <div class="member card">
+            <div class="avatar">AR</div>
+            <div>
+              <h4>Ari Pratama</h4>
+              <p>Head of Events</p>
+            </div>
+          </div>
+
+          <div class="member card">
+            <div class="avatar">LN</div>
+            <div>
+              <h4>Luna Nabila</h4>
+              <p>Community & Outreach</p>
+            </div>
+          </div>
+
+          <div class="member card">
+            <div class="avatar">RS</div>
+            <div>
+              <h4>Rizki Saputra</h4>
+              <p>Finance Secretary</p>
+            </div>
+          </div>
+
+          <div class="member card">
+            <div class="avatar">MD</div>
+            <div>
+              <h4>Mei Dewi</h4>
+              <p>Media & Design</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="director" class="director">
+      <div class="card">
+        <h2>Director & Advisors</h2>
+        <div class="director-box" style="margin-top:8px">
+          <div style="width:110px;height:110px;border-radius:12px;background:linear-gradient(135deg,#ecfeff,#e6f7ff);display:flex;align-items:center;justify-content:center;font-weight:800">DR</div>
+          <div class="info">
+            <h3>Fatimah Rahma</h3>
+            <p style="color:var(--muted);margin-top:6px">OSIM Director — responsible for overall strategy, member welfare, and representing OSIM in school leadership meetings.</p>
+            <p style="color:var(--muted);font-size:13px;margin-top:8px">Advisors: Mr. Hadi Santoso (Teacher Advisor), Ms. Lestari (Community Coordinator)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="card">
+        <h2>Contact & Join</h2>
+        <p style="color:var(--muted)">Want to join OSIM, collaborate, or invite us to an event? Use the form below or contact the advisors.</p>
+
+        <form onsubmit="event.preventDefault();alert('Form demo — replace with real backend or mailto link.');">
+          <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name"></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" rows="4" placeholder="Tell us why you want to join"></textarea></div>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
+            <button type="submit">Send</button>
+            <div style="color:var(--muted);font-size:13px">Or email: <strong>osim@school.edu</strong></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="font-weight:700">OSIM — School Organization</div>
+        <div style="color:var(--muted);font-size:13px">© <span id="year"></span> OSIM. Built with ❤️ by members.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
